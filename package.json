@@ -4,7 +4,7 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "maintain": "node index.js"
+        "maintain": "node playlist.js"
     },
     "dependencies": {
         "ffmpeg": "^0.0.4",
