@@ -4,6 +4,8 @@ const yts = require('yt-search');
 const ffmpeg = require('fluent-ffmpeg');
 
 const music = fs.readdirSync('./music').filter(file => file.endsWith('.mp3'));
+const html = fs.readFileSync('./index.html');
+const files = [];
 
 music.forEach(async (file) => {
   try {
@@ -12,6 +14,9 @@ music.forEach(async (file) => {
     ffmpeg(stream)
           .audioBitrate(128)
           .format('mp3')
-          .save(fs.createWriteStream(`./music/${music}`, { flags: 'a' }))
+          .save(fs.createWriteStream(`./music/${music}`, { flags: 'a' }));
+    files.push(`./music/${file}`);
   }catch(e) {console.log(e)}
 })
+
+fs.writeFileSync("./index.html", html.replace("<!-- Music -->", files.join("\n")))
