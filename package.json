@@ -1,0 +1,15 @@
+
+{
+    "name": "scripts",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "maintain": "node index.js"
+    },
+    "dependencies": {
+        "puppeteer": "18.2.1",
+        "ytdl-core": "^4.11.2",
+        "fluent-ffmpeg": "^2.1.2"
+    }
+}
