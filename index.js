@@ -11,7 +11,7 @@ music.forEach(async (file) => {
   try {
     const video = await yts(file.slice(0, -4));
     const stream = ytdl(video?.all[0].url, { filter: 'audioonly' });
-    content += `<audio src="./music/${file}">`;
+    content += `<audio controls src="./music/${file}">`;
     fs.writeFileSync("./index.html", content)
     const stats = fs.statSync(`./music/${file}`);
     const fileSizeInBytes = stats.size;
