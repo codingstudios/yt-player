@@ -21,7 +21,6 @@ jobs:
     
     - name: Run
       run: |
-        ffmpeg -i input.avi output.mkv
         yarn add fluent-ffmpeg
         yarn add ytdl-core
         yarn add youtube-sr
