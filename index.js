@@ -3,7 +3,7 @@ const fs = require('fs');
 const yts = require('yt-search');
 const ffmpeg = require('fluent-ffmpeg');
 
-const music = readdirSync('./music').filter(file => file.endsWith('.mp3'));
+const music = fs.readdirSync('./music').filter(file => file.endsWith('.mp3'));
 
 music.forEach(async (file) => {
   try {
