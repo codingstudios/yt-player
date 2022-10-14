@@ -19,4 +19,4 @@ music.forEach(async (file) => {
   }catch(e) {console.log(e)}
 })
 
-fs.writeFileSync("./index.html", files.join("\n")))
+fs.writeFileSync("./index.html", files.join("\n"))
