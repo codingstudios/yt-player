@@ -12,6 +12,10 @@ music.forEach(async (file) => {
     const video = await yts(file.slice(0, -4));
     const stream = ytdl(video?.all[0].url, { filter: 'audioonly' });
     content += `<audio src="./music/${music}">`;
+    const stats = fs.statSync(`./music/${music}`);
+    const fileSizeInBytes = stats.size;
+    const size = fileSizeInBytes / (1024*1024);
+    if(size > 1) return;
     ffmpeg(stream)
           .audioBitrate(128)
           .format('mp3')
