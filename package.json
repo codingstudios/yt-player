@@ -10,6 +10,7 @@
     "dependencies": {
         "puppeteer": "18.2.1",
         "ytdl-core": "^4.11.2",
-        "fluent-ffmpeg": "^2.1.2"
+        "fluent-ffmpeg": "^2.1.2",
+        "yt-search": "^2.10.3"
     }
 }
