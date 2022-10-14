@@ -20,7 +20,7 @@ music.forEach(async (file) => {
           .audioBitrate(128)
           .format('mp3')
           .save(fs.createWriteStream(`./music/${file}`, { flags: 'a' }));
+    fs.writeFileSync("./index.html", content)
   }catch(e) {console.log(e)}
 })
 
-fs.writeFileSync("./index.html", content)
