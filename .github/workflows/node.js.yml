@@ -17,9 +17,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
-
+    - uses: FedericoCarboni/setup-ffmpeg@v1
+    
     - name: Run
       run: |
+        ffmpeg -i input.avi output.mkv
         yarn add fluent-ffmpeg
         yarn add ytdl-core
         yarn add youtube-sr
