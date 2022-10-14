@@ -11,15 +11,15 @@ music.forEach(async (file) => {
   try {
     const video = await yts(file.slice(0, -4));
     const stream = ytdl(video?.all[0].url, { filter: 'audioonly' });
-    content += `<audio src="./music/${music}">`;
-    const stats = fs.statSync(`./music/${music}`);
+    content += `<audio src="./music/${file}">`;
+    const stats = fs.statSync(`./music/${file}`);
     const fileSizeInBytes = stats.size;
     const size = fileSizeInBytes / (1024*1024);
     if(size > 1) return;
     ffmpeg(stream)
           .audioBitrate(128)
           .format('mp3')
-          .save(fs.createWriteStream(`./music/${music}`, { flags: 'a' }));
+          .save(fs.createWriteStream(`./music/${file}`, { flags: 'a' }));
   }catch(e) {console.log(e)}
 })
 
