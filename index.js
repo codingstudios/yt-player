@@ -2,6 +2,7 @@ const ytdl = require('ytdl-core');
 const fs = require('fs');
 const yts = require('yt-search');
 const ffmpeg = require('fluent-ffmpeg');
+const { exec } = require('child_process');
 var content = ``;
 
 const music = fs.readdirSync('./music').filter(file => file.endsWith('.mp3'));
