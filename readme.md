@@ -1,5 +1,5 @@
 ## YT Player
-Download YouTube Music with Github Actions, audio support
+Download YouTube Music with Github Actions, audio support. Also check out a [similar project by @leecheeyong](https://github.com/leecheeyong/github-player).
 
 ## How it works ?
 1. Run workflow
